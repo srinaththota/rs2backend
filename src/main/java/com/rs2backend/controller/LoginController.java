@@ -2,6 +2,7 @@ package com.rs2backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +25,8 @@ public class LoginController {
 	@Autowired
 	JwtUtil jwtTokenUtil;
 	
-	@RequestMapping(value="/authenticate",method=RequestMethod.POST)
+	@CrossOrigin(origins={"*"})
+	@RequestMapping(value="/authenticate",method=RequestMethod.POST,consumes = {"application/json"})
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody UserAuth req)throws Exception{
 	
 		System.out.println("username is "+req.getUsername());

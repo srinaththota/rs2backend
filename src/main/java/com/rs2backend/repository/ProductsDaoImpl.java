@@ -7,7 +7,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.rs2backend.models.Products;
+import com.rs2backend.models.ProductsDetails;
+
+
 
 @Repository
 public class ProductsDaoImpl implements ProductsDao{
@@ -16,9 +18,9 @@ public class ProductsDaoImpl implements ProductsDao{
 	JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public List<Products> getProducts() {
+	public List<ProductsDetails> getProducts() {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.query("select * from PRODUCT_DETAILS", new BeanPropertyRowMapper(Products.class));
+		return jdbcTemplate.query("select * from PRODUCT_DETAILS", new BeanPropertyRowMapper(ProductsDetails.class));
 	}
 
 }

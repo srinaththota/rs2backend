@@ -48,7 +48,6 @@ public class TransactionDao {
 	*/
 	public int insertTransactions(int userid , int productid) {
 	
-		System.out.println("userid is "+userid);
 		int[] types = {Types.INTEGER, Types.INTEGER, Types.INTEGER};
 		int count = jdbcTemplate.queryForObject("select count(*) from TRANSACTION_DETAILS", Integer.class);
 		//return jdbcTemplate.update("insert into TRANSACTION_DETAILS values(?,?,?)", new Object[] {count+1,userid,productid},types);
